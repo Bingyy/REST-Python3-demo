@@ -235,7 +235,7 @@ def orders_matchresults(symbol, types=None, start_date=None, end_date=None, _fro
     params = {'symbol': symbol}
 
     if types:
-        params[types] = types
+        params['types'] = types
     if start_date:
         params['start-date'] = start_date
     if end_date:
