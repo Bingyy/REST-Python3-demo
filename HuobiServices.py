@@ -161,7 +161,6 @@ def cancel_order(order_id):
     url = "/v1/order/orders/{0}/submitcancel".format(order_id)
     return api_key_post(params, url)
 
-
 # 查询某个订单
 def order_info(order_id):
     """
@@ -249,7 +248,43 @@ def orders_matchresults(symbol, types=None, start_date=None, end_date=None, _fro
     url = '/v1/order/matchresults'
     return api_key_get(params, url)
 
+# 查询所有当前帐号下未成交订单
+def open_orders(account_id,symbol,side='',size=10):
+    """
+    :param symbol: 
+    :return: 
+    """
+    params = {}
+    url = "/v1/order/openOrders"
+    if symbol:
+        params['symbol'] = symbol
+    if account_id:
+        params['account-id'] = account_id
+    if side:
+        params['side'] = side
+    if size:
+        params['size'] = size
+    
+    return api_key_get(params, url)
 
+# 批量取消符合条件的订单
+def cancel_open_orders(account_id,symbol,side='',size=10):
+    """
+    :param symbol: 
+    :return: 
+    """
+    params = {}
+    url = "/v1/order/orders/batchCancelOpenOrders"
+    if symbol:
+        params['symbol'] = symbol
+    if account_id:
+        params['account-id'] = account_id
+    if side:
+        params['side'] = side
+    if size:
+        params['size'] = size
+    
+    return api_key_post(params, url)
 
 # 申请提现虚拟币
 def withdraw(address, amount, currency, fee=0, addr_tag=""):
