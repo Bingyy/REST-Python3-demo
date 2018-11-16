@@ -97,7 +97,7 @@ def get_symbols(long_polling=None):
     return api_key_get(params, path)
 
 # Get available currencies
-def get_currencies(self):
+def get_currencies():
     """
     :return:
     """
