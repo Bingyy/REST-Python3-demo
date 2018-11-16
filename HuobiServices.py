@@ -107,7 +107,7 @@ def get_currencies():
     return http_get_request(url, params)
 
 # Get all the trading assets
-def get_trading_assets(self):
+def get_trading_assets():
     """
     :return:
     """
