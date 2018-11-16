@@ -53,6 +53,14 @@ def get_trade(symbol):
     url = MARKET_URL + '/market/trade'
     return http_get_request(url, params)
 
+# Tickers detail
+def get_tickers():
+    """
+    :return:
+    """
+    params = {}
+    url = MARKET_URL + '/market/tickers'
+    return http_get_request(url, params)
 
 # 获取merge ticker
 def get_ticker(symbol):
