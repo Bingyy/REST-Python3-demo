@@ -96,6 +96,26 @@ def get_symbols(long_polling=None):
     path = '/v1/common/symbols'
     return api_key_get(params, path)
 
+# Get available currencies
+def get_currencies():
+    """
+    :return:
+    """
+    params = {}
+    url = MARKET_URL + '/v1/common/currencys'
+
+    return http_get_request(url, params)
+
+# Get all the trading assets
+def get_trading_assets():
+    """
+    :return:
+    """
+    params = {}
+    url = MARKET_URL + '/v1/common/symbols'
+
+    return http_get_request(url, params)
+
 '''
 Trade/Account API
 '''
